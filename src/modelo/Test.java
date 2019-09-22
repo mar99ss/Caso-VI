@@ -14,6 +14,7 @@ public class Test {
   }
   public void random(){
     final String secretKeyPrin = "29dh120bdk133";
+    String originalString = "xZwM7BWIpSjYyGFr9rhpEa+cYVtACW7yQKmyN6OYSCv0ZEg9jWbc6lKzzCxRSSIvOvlimQZBMZOYnOwiA9yy3YU8zk4abFSItoW6Wj0ufQ0=";
     String parte1= "29dh120";
     String parte2= "dk1";
     String parte3= "3";
@@ -26,8 +27,7 @@ public class Test {
       String secretKey= parte1+letras[letra]+parte2+Integer.toString(numero)+parte3;
 
       System.out.println("Letra: "+letras[letra]);
-      System.out.println("Numero: "+numeros[numero]);
-      String originalString = "xZwM7BWIpSjYyGFr9rhpEa+cYVtACW7yQKmyN6OYSCv0ZEg9jWbc6lKzzCxRSSIvOvlimQZBMZOYnOwiA9yy3YU8zk4abFSItoW6Wj0ufQ0=";
+      System.out.println("Numero: "+numeros[numero]); 
       String decryptedString = AES.decrypt(originalString, secretKey) ;
 
       if(decryptedString!=null){
