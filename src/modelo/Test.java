@@ -21,21 +21,26 @@ public class Test {
     String[] letras={"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
     String[] numeros={"0","1","2","3","4","5","6","7","8","9"};
     boolean verificacion= true;
+    double aleatorio;
+    
     do{
-      int letra= (int) (Math.random() * 26);
-      int numero= (int) (Math.random() * 9);
-      String secretKey= parte1+letras[letra]+parte2+Integer.toString(numero)+parte3;
+      aleatorio=Math.random();
+      if(aleatorio<=0.37){
+        int letra= (int) (Math.random() * 26);
+        int numero= (int) (Math.random() * 9);
+        String secretKey= parte1+letras[letra]+parte2+Integer.toString(numero)+parte3;
 
-      System.out.println("Letra: "+letras[letra]);
-      System.out.println("Numero: "+numeros[numero]); 
-      String decryptedString = AES.decrypt(originalString, secretKey) ;
+        System.out.println("Letra: "+letras[letra]);
+        System.out.println("Numero: "+numeros[numero]); 
+        String decryptedString = AES.decrypt(originalString, secretKey) ;
 
-      if(decryptedString!=null){
-        System.out.println(originalString); 
-        System.out.println(decryptedString);
-        System.out.println(secretKey);  
-        verificacion= false; 
-      }  
+        if(decryptedString!=null){
+          System.out.println(originalString); 
+          System.out.println(decryptedString);
+          System.out.println(secretKey);  
+          verificacion= false; 
+        }  
+      }
      } while(verificacion); 
      System.out.println("Salió"); 
   } 
